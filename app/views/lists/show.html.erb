@@ -12,6 +12,7 @@
         add a movie
       </button>
       <%= link_to "delete this list", list_path(@list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+      <p><%= button_to "back", lists_path, method: :get %></p>
     </div>
   </div>
   <div class="row my-2">
@@ -66,3 +67,14 @@
 </div>
 
 <%= render "bookmarks/modal", list: @list, bookmark: @bookmark %>
+
+<!-- add image button
+On the show view of a List, the same image should be displayed, but bigger, followed by the movies that have been saved to it!-->
+
+<!--@image =
+default list_background.jpg
+
+ <p><%= button_to "upload a photo", lists_path, method: :get %></p>
+<%= cl_image_tag %>
+
+<%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>

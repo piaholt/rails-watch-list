@@ -16,8 +16,14 @@
           <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
             <%= list.name %>
           </div>
+           <%= link_to "Delete",
+        list_path(list),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+
+<!--The user should be able to upload an image that will then be displayed on the index view of List >
